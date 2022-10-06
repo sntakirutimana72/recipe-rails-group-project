@@ -4,11 +4,12 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.where(id: params[:id], user: current_user)
+    @recipe, = Recipe.where(id: params[:id], user: current_user)
+    p @recipe.preparation_time
   end
 
   def destroy
-    @recipe = Recipe.where(id: params[:id], user: current_user)
+    @recipe, = Recipe.where(id: params[:id], user: current_user)
     @recipe.destroy
     redirect_to recipes_path, notice: 'Recipe deleted!'
   end
