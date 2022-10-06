@@ -18,8 +18,8 @@ class FoodsController < ApplicationController
   end
 
   def destroy
-    food = Food.where(id: params[:id], user: current_user)
-    food.destroy
+    food, = Food.where(id: params[:id], user: current_user)
+    food&.destroy!
     redirect_to(foods_path)
   end
 

@@ -42,7 +42,7 @@
         <%= link_to('Add Food', new_food_path, class: "btn btn-primary") %>
       </tr>
     <% end %>
-  <% recipe.recipe_foods.each do |ingredient| %>
+  <% @recipe_foods.each do |ingredient| %>
     <tr>
       <th scope="row"><%= ingredient.food.name %></th>
       <td><%= ingredient.quantity %></td>

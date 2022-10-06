@@ -8,6 +8,6 @@
     </div>
   </div>
   <% if can?(:destroy, recipe) %>
-    <%= button_to "Delete", recipes_path, method: :delete, class: "btn btn-danger m-3 ms-4" %>
+    <%= button_to "Delete", recipe_path(recipe), method: :delete, class: "btn btn-danger m-3 ms-4" %>
   <% end %>
 </div>

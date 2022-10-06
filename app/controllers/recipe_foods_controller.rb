@@ -1,4 +1,6 @@
 class RecipeFoodsController < ApplicationController
+  include RecipeFoodHelper
+
   def new
     @recipe_food = RecipeFood.new
     query_recipe
@@ -33,7 +35,7 @@ class RecipeFoodsController < ApplicationController
   def destroy
     query_ingredient
     @recipe_food.destroy
-    redirect_to recipe_url(params[:recipe_id], notice: 'Ingredient deleted!')
+    redirect_to(recipe_url(params[:recipe_id]), notice: 'Ingredient deleted!')
   end
 
   private

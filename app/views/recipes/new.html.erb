@@ -1,0 +1,30 @@
+<div class="container-fluid w-50 d-flex flex-column align-items-center">
+
+  <%= form_with model: @recipe, :html => {:class => "w-50 mt-4"}, scope: :recipe do |form| %>
+    <div>
+      <%= form.label :name, class: "form-label" %><br>
+      <%= form.text_field :name,  class:"form-control", placeholder: "Name" %>
+    </div>
+
+    <div>
+      <%= form.label :preparation_time, class:"form-label" %><br>
+      <%= form.text_field :preparation_time, class:"form-control", placeholder: "Preparation Time" %>
+    </div>
+
+    <div>
+      <%= form.label :cooking_time , class:"form-label"%><br>
+      <%= form.text_field :cooking_time ,  class:"form-control", placeholder: "Cooking Time" %>
+    </div>
+
+    <div>
+      <%= form.label :description , class:"form-label"%><br>
+      <%= form.text_area :description , class:"form-control", placeholder: "description" %>
+    </div>
+
+
+    <div>
+      <%= form.submit 'Create Recipe', class: "btn btn-primary my-3"  %>
+    </div>
+  <% end %>
+
+</div>
