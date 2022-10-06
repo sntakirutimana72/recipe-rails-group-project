@@ -3,5 +3,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :recipes, only: [:index, :show]
+  resources :recipes, only: [:index, :show] do
+    resources :recipe_foods, only: [:index, :edit, :destroy]
+  end
+
+  resources :foods, only: [:new, :create, :destroy, :edit]
 end
