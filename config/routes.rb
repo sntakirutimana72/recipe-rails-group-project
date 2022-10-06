@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  root 'public_recipes#index'
+
   devise_for :users
 
   resources :recipes, only: [:index, :show] do
@@ -9,6 +11,10 @@ Rails.application.routes.draw do
 
   resources :foods, only: [:new, :create, :destroy, :edit]
 
-  get 'public_recipes', to: 'recipes#public'
+  namespace :public_recipes do
+    get '', action: 'index'
+    get '/:id', action: 'show'
+  end
+
   get 'general_shopping_list', to: 'shopping_lists#missing_items'
 end

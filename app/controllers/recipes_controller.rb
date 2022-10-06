@@ -13,8 +13,4 @@ class RecipesController < ApplicationController
     @recipe.destroy
     redirect_to recipes_path, notice: 'Recipe deleted!'
   end
-
-  def public
-    @recipes = Recipe.where(public: true).order(created_at: :desc)
-  end
 end
