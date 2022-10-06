@@ -1,0 +1,13 @@
+<section class="d-flex flex-column align-items-center">
+  <h1 class="text-center mb-5">Recipes</h1>
+
+  <div class="d-flex flex-column">
+    <% if @recipes.empty? %>
+      <h2 class="text-center">The list is empty.</h2>
+    <% else %>
+      <% @recipes.each do |recipe| %>
+      <%= render('card', recipe:)  %>
+      <% end %>
+    <% end %>
+  </div>
+</section>

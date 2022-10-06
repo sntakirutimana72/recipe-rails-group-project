@@ -1,0 +1,10 @@
+<h1 class="text-center mb-5">Public Recipes</h1>
+<section class="d-flex flex-column align-items-center">
+  <% @recipes.each do |recipe| %>
+    <%= render 'card', recipe:  %>
+  <% end %>
+
+  <% if @recipes.empty? %>
+    <h2 class="text-center">This list is empty</h2>
+  <% end %>
+</section>

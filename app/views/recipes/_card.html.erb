@@ -1,0 +1,13 @@
+<div class="card mb-3" style="width: 50rem;">
+  <div class="card-body d-flex space-between">
+    <h3>
+      <%= link_to(recipe.name, recipe_path(recipe)) %>
+    </h3>
+    <div class="card-body d-flex flex-column">
+      <p class="mt-4 m-0"><%= recipe.description %></p>
+    </div>
+  </div>
+  <% if can?(:destroy, recipe) %>
+    <%= button_to "Delete", recipe_path(recipe), method: :delete, class: "btn btn-danger m-3 ms-4" %>
+  <% end %>
+</div>
