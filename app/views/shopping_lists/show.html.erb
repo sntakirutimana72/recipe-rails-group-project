@@ -6,5 +6,26 @@
       <p>Total price of missing food: $<%= @price %></p>
     </div>
 
-  
+  <% unless @foods.empty? %>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Food</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+    <tbody>
+        <% @foods.each do |item| %>
+          <tr>
+            <td><%= item[:name] %></td>
+            <td><%= item[:quantity] %> <%= item[:measurement_unit] %> </td>
+            <td>$<%= item[:price] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <h2> No missing food items</h2>
+  <% end %>
 </div>
