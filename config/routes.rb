@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   end
 
   resources :foods, only: [:new, :create, :destroy, :edit]
+
+  get 'public_recipes', to: 'recipes#public'
 end
