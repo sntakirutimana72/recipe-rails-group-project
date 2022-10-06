@@ -1,23 +1,30 @@
 <div class="container-fluid w-50 d-flex flex-column align-items-center">
-<%= form_with model: @food, :html => {:class => "w-50 mt-4"} do |form| %>
-  <div>
-    <%= form.label :name, class: "form-label" %><br>
-    <%= form.text_field :name,  class:"form-control" %>
-  </div>
 
-  <div>
-    <%= form.label :measurement_unit, class:"form-label" %><br>
-    <%= form.text_field :measurement_unit, class:"form-control" %>
-  </div>
-<div>
-    <%= form.label :price , class:"form-label"%><br>
-    <%= form.number_field :price ,  class:"form-control"%>
-  </div>
+  <%= form_with model: @food, :html => {:class => "w-50 mt-4"} do |form| %>
+    <div>
+      <%= form.label :name, class: "form-label" %><br>
+      <%= form.text_field :name,  class:"form-control", placeholder: "Name" %>
+    </div>
+
+    <div>
+      <%= form.label :measurement_unit, class:"form-label" %><br>
+      <%= form.text_field :measurement_unit, class:"form-control", placeholder: "Measurement Unit" %>
+    </div>
+
+    <div>
+      <%= form.label :price , class:"form-label"%><br>
+      <%= form.number_field :price ,  class:"form-control", placeholder: "Price" %>
+    </div>
+
+    <div>
+      <%= form.label :quantity , class:"form-label"%><br>
+      <%= form.number_field :quantity , class:"form-control", placeholder: "Quantity" %>
+    </div>
 
 
-  <div>
-    <%= form.submit 'Create food', class: "btn btn-primary my-3"  %>
-  </div>
-<% end %>
+    <div>
+      <%= form.submit 'Create food', class: "btn btn-primary my-3"  %>
+    </div>
+  <% end %>
 
 </div>

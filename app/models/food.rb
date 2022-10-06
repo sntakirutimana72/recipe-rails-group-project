@@ -1,4 +1,4 @@
 class Food < ApplicationRecord
-  has_many :recipe_food
-  has_many :inventory_food
+  belongs_to :user
+  has_many :recipe_foods
 end

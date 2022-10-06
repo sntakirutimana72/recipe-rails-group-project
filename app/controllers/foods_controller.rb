@@ -1,6 +1,6 @@
 class FoodsController < ApplicationController
   def index
-    @foods = Food.all
+    @foods = Food.where(user: current_user)
   end
 
   def new
@@ -8,24 +8,27 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @food = Food.new(food_params)
-    @food.user_id = current_user.id
+    @food = Food.new(create_params)
+
     if @food.save
-      redirect_to foods_path
+      redirect_to(foods_path)
     else
-      render :new, status: :unprocessable_entity
+      render(:new, status: :unprocessable_entity)
     end
   end
 
   def destroy
-    food = Food.find(params[:id])
+    food = Food.where(id: params[:id], user: current_user)
     food.destroy
-    redirect_to foods_path
+    redirect_to(foods_path)
   end
 
   private
 
-  def food_params
-    params.require(:food).permit(:name, :price, :measurement_unit, :user_id)
+  def create_params
+    params
+      .require(:food)
+      .permit(:name, :price, :measurement_unit, :quantity)
+      .merge(user: current_user)
   end
 end
