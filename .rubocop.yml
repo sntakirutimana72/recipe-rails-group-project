@@ -7,9 +7,10 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
-    - "app/controllers/*"
     - "app/controllers/concerns/*"
     - "app/models/*"
+    - "spec/models/*"
+    - "spec/requests/*"
 
   DisplayCopNames: true
 
