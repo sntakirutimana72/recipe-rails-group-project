@@ -82,7 +82,7 @@ Rails.application.configure do
     :authentication => :cram_md5
   }
 
-  config.action_mailer.default_url_options = { :host => ENV[:host] }
+  config.action_mailer.default_url_options = { :host => 'https://hansty-recipe-app.herokuapp.com' }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
