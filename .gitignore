@@ -38,3 +38,6 @@ package-lock.json
 # Ignore editors config files
 /.vscode/
 /.idea/
+
+# Ignore local environment variables
+.env
